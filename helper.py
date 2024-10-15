@@ -17,7 +17,7 @@ class Helper:
    
    def DBconfig(self):
        print("OralceDB Connection")
-       con = cx_Oracle.connect('CFDB/test123@gzplorac-scan.banglalink.net:1580/POSDMSDB')
+       con = cx_Oracle.connect('SCHEMA_NAME/SCHEMA_PASS@HOST_NAME_OR_IP:PORT/ORACLE_DB_NAME')
        return con
     
    def ExecuteSQL(SQLSTRING):
@@ -85,14 +85,14 @@ class Helper:
         result = 0
 
         if(destinationSFT == 1) :    # Test
-            host='129.148.177.186'
-            myuser='OIC_PROD_POS'
-            password='BL#idcs#PRD#2022'
-            PORT_NUM = 5019
+            host='0.0.0.0'  #IP
+            myuser='USER'   #USER
+            password='PASS' #PASS
+            PORT_NUM = 0    #SFTP PORT
         else :                      # Live
-            host='129.148.176.45'
-            myuser='OIC_UAT_POS'
-            PORT_NUM = 10124
+            host='0.0.0.0'  #IP
+            myuser='USER'   #USER
+            PORT_NUM = 0    #PORT
             
         print ("Define")   
         key_filename = "D:/ESS_DATA_EXPORT_LIVE/encryptionKey/NewKey/POS_SSH_private.txt"
