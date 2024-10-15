@@ -1,0 +1,5 @@
+PassPharse: welcome#1
+
+SSH-keygen for [RSA-2048] (PrivateKey/PublicKey)
+FingerPrint [64:00:3c:2c:2d:9d:9a:db:d6:00:9e:26:d0:36:37:71]
+
