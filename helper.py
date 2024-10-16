@@ -96,7 +96,7 @@ class Helper:
             
         print ("Define")   
         key_filename = "D:/ESS_DATA_EXPORT_LIVE/encryptionKey/NewKey/POS_SSH_private.txt"
-        passphrase="welcome#1"
+        passphrase="xxxxxx"
         encryptedFileName = source+".pgp"
 
         i = 1
@@ -110,9 +110,8 @@ class Helper:
                 mySSHK   = paramiko.RSAKey.from_private_key_file(key_filename,password=passphrase)
                 sshcon   = paramiko.SSHClient()  # will create the object
                 sshcon.set_missing_host_key_policy(paramiko.AutoAddPolicy()) # no known_hosts error
-                print ("connecting")
-                #sshcon.connect(hostname, username=myuser, key_filename=mySSHK) # no passwd needed
-                sshcon.connect(host, username=myuser, pkey=mySSHK,port=PORT_NUM,disabled_algorithms={'pubkeys': ['rsa-sha2-256', 'rsa-sha2-512']})
+                print ("connecting")                
+                sshcon.connect(host, username=myuser, pkey=mySSHK,port=PORT_NUM,disabled_algorithms={'pubkeys': ['', '']}) #rsa-sha2-000 rsa-sha2-000
                 print("Connection succesfully stablished to FPT server... ")
                 with sshcon.open_sftp() as sftp:
                     sftp.put(encryptedFileName, destination)
