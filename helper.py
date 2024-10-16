@@ -136,16 +136,16 @@ class Helper:
        try:
            gpg = gnupg.GPG('C://Program Files (x86)/GnuPG/bin/gpg.exe')
            keyInput=gpg.gen_key_input(
-               name_email='biodev02@banglalink.net',
-               passphrase='iuytreadfghj98765sdfg76erty',
+               name_email='', #imail id
+               passphrase='',   # emil pass
                key_type='RSA',
-               key_length=4096
+               key_length=0     #port
             )
            key=gpg.gen_key(keyInput)
            print(key)
            path=FILE_PATH
            with open(path,'rb')as f:
-               status=gpg.encrypt_file(f,['almamun@primetechbd.com'],output=path+".Pgp")
+               status=gpg.encrypt_file(f,[''],output=path+".Pgp")  # add email id in ''
            #print(status.ok)
            #print(status.stderr)
            return 1
